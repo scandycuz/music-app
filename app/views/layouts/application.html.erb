@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Music App</title>
+  <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% if current_user %>
+<h5>You are logged in as <%= current_user.email %></h5>
+<% end %>
+
+<% if current_user %>
+  <%= button_to "Logout", session_url, controller: :session, action: :delete, method: :delete %>
+<% end %>
+<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+
+<h1>Signin</h1>
+
+<p>Not a user? <%= link_to "Sign up", new_user_url %></p>
+<%= render partial: "shared/form", :locals => { :user => @user, :method => "POST", :button_text => "Signin", :action => session_url, :form_id => 'signin_form' } %>

@@ -1,0 +1,20 @@
+
+<form id="<%= form_id %>" method="<%= method %>" action="<%= action %>">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label for="user_email" value="name"></label>
+  <input type="text" name="user[email]" placeholder="Email" value=""><br><br>
+
+  <label for="user_password"></label>
+  <input type="password" name="user[password]" placeholder="Password" value=""><br><br>
+
+  <button><%= button_text %></button><br><br>
+
+  <% if flash[:errors] %>
+    <ul>
+    <% flash[:errors].each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+    </ul>
+  <% end %>
+</form>
